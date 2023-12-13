@@ -354,6 +354,7 @@ h3 {
 .service {
     max-width: 500px;
     margin: 0 auto;
+    flex: 1 1 0px;
 }
 
 @media (min-width: 800px) {
@@ -409,6 +410,8 @@ h3 {
         left: -1em;
         width: calc(100% + 2em);
         padding-right: calc(200px + 2.5em);
+        display: flex;
+        align-items: center;
     }
 
     .about-me__img {
@@ -443,7 +446,9 @@ h3 {
 }
 
 .portfolio__img--beta {
-    min-height: 100%;
+    min-height: 300px;
+    aspect-ratio: 1 / 1;
+    z-index: -10;
 }
 
 .portfolio__over {
@@ -454,13 +459,72 @@ h3 {
     color: var(--clr-dark);
     padding: 1.5em 15px;
     max-width: 100%;
-    min-height: 50%;
+    height: 300px;
 }
 
 .portfolio__item--beta {
     max-width: 300px;
     transition: transform 0.5s ease-in-out;
     text-decoration: none;
+}
+
+/* .portfolio__item--gamma {
+    max-width: 300px;
+    height: 300px;
+    aspect-ratio: 1 / 1;
+    background-image: url(../imgs/foto2.jpeg);
+    background-size: 100%;
+} */
+
+.portfolio__item--insert:hover {
+    opacity: 100%;
+}
+
+.portfolio__item--insert {
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0 10px;
+    vertical-align: center;
+    background-color: rgba(0,0,0,0.5);    
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0%;
+    z-index: 99;
+}
+
+.portfolio--links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* .portfolio--links * {
+    border: 1px solid red;
+} */
+
+.portfolio--links a {
+    text-decoration: none;
+    color: var(--clr-accent);
+    transition: scale 0.25s ease-in-out;
+    padding: 0;
+}
+
+.portfolio--links .fa-solid,
+.portfolio--links .fa-brands {
+    font-size: 40px;
+}
+
+.portfolio--links a:hover {
+    scale: 0.9;
+}
+
+.portfolio--links__link p {
+    margin: 0;
 }
 
 .portfolio__item--beta:hover {
@@ -520,7 +584,7 @@ h3 {
 /* Footer */
 
 .footer {
-    background: #111;
+    background: #03203A;
     color: var(--clr-accent);
     text-align: center;
     padding: 2.5em 0;
